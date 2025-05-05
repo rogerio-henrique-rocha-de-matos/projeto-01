@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo do broxa</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+
+    .game-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background-color: #3498db;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .box:hover {
+        background-color: #2980b9;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<div class="game-container">
+    <div class="box" onclick="checkGuess(this)"></div>
+    <div class="box" onclick="checkGuess(this)"></div>
+    <div class="box hidden" id="correct-box" onclick="checkGuess(this)"></div>
+    <div class="box" onclick="checkGuess(this)"></div>
+</div>
+
+<script>
+    function checkGuess(box) {
+        if (box.id === 'correct-box') {
+            box.style.backgroundColor = '#2ecc71';
+            alert('Parabéns! Você encontrou.');
+        } else {
+            box.style.backgroundColor = '#e74c3c';
+            alert('Ops! Tente novamente.');
+        }
+    }
+
+    // Embaralhar as caixas aleatoriamente ao carregar a página
+    window.onload = function() {
+        var boxes = document.querySelectorAll('.box');
+        var correctBox = document.getElementById('correct-box');
+        correctBox.removeAttribute('id');
+        var randomIndex = Math.floor(Math.random() * boxes.length);
+        boxes[randomIndex].id = 'correct-box';
+        correctBox.classList.remove('hidden');
+    };
+</script>
+    <h1>executable</h1>
+    <ul>
+        <li>jogo dinamico</li>
+        <li>teste grafico</li>
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ol>
+    </ul>
+
+</body>
+</html>
+

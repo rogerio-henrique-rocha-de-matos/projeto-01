@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 ola meu nome é rogerio Henrique rocha de matos 
+=======
+<h1> Hello Word </h1>
+
+<p> Meu nome É ROGÉRIO e esse é a segunda versão do meu código </p>
+>>>>>>> 2034f79b76288433846c6cd8749f6aa844e71581
+
+testete 2 
